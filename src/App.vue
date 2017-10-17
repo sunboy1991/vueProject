@@ -2,7 +2,12 @@
 	<div id="app">
 		<router-view></router-view>
 		<div class="data">
-			{{msg}}
+			<ul>
+			<li v-for="val in msg">
+				<a v-bind:href='val.schema'><img v-bind:src="val.imgUrl"/></a>
+
+			</li>
+			</ul>
 		</div>
 	</div>
 </template>
@@ -16,10 +21,11 @@
 			}
 		},
 		created: function () {
-			var url = 'http://m.yaoex.com/manage/api/mobileIndex/listIndexFloor';
-			this.$http.post(url).then(function(data) {
-				var json = data.body;
-				this.msg = eval("(" + json + ")");
+			var url = '/manage/api/self/listAd';
+			this.$http.get(url,{params:{'station':210000,'type':1}}).then(function(data) {
+				var dataBaner = data.body.data;
+				this.msg =dataBaner.banner
+				console.log(dataBaner)
 			}, function(response) {
 				console.log(response)
 			})
