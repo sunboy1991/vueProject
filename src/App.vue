@@ -21,7 +21,7 @@
 			}
 		},
 		created: function () {
-			var url = '/manage/api/self/listAd';
+			var url = 'http://m.yaoex.com/manage/api/self/listAd';
 			this.$http.get(url,{params:{'station':210000,'type':1}}).then(function(data) {
 				var dataBaner = data.body.data;
 				this.msg =dataBaner.banner
@@ -33,7 +33,7 @@
 	}
 </script>
 
-<style>
+<style  lang="less">
 	#app {
 		font-family: 'Avenir', Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
@@ -41,5 +41,9 @@
 		text-align: center;
 		color: #2c3e50;
 		margin-top: 60px;
+
 	}
+		img{
+		width: 100%;	
+		}	
 </style>
