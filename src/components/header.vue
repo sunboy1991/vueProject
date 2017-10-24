@@ -1,10 +1,7 @@
 <template>
 <div class="container">
-    <header class="base_header">
-      登录
-    </header>
     <h1 class="logo">
-        <img src="images/logo.png" alt="1号药城" />
+        <img src="../assets/img/logo.png" alt="1号药城" />
     </h1>
     <div class="login_container">
         <div class="afterLine">
@@ -33,7 +30,7 @@
 
 <script>
 	export default {
-		name: 'HelloWorld',
+		name: 'header',
 		data() {
 			return {
 				msg: 'Welcome to Your Vue.js App'
@@ -49,8 +46,5 @@
 </script>
 
 <style lang="less">
-
-@import '../../static/less/common.less';
-
-
+@import '../assets/styles/register.less';
 </style>

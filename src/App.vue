@@ -1,14 +1,7 @@
 <template>
 	<div id="app">
-		<router-view></router-view>
-		<div class="data">
-			<ul>
-			<li v-for="val in msg">
-				<a v-bind:href='val.schema'><img v-bind:src="val.imgUrl"/></a>
 
-			</li>
-			</ul>
-		</div>
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -20,17 +13,18 @@
 				msg: 'Welcome to Your Vue.js App'
 			}
 		},
-		created: function () {
-			var url = 'http://m.yaoex.com/manage/api/self/listAd';
-			this.$http.get(url,{params:{'station':210000,'type':1}}).then(function(data) {
-				var dataBaner = data.body.data;
-				this.msg =dataBaner.banner
-				console.log(dataBaner)
-			}, function(response) {
-				console.log(response)
-			})
-		}
+//		created: function () {
+//			var url = 'http://m.yaoex.com/manage/api/self/listAd';
+//			this.$http.get(url,{params:{'station':210000,'type':1}}).then(function(data) {
+//				var dataBaner = data.body.data;
+//				this.msg =dataBaner.banner
+//				console.log(dataBaner)
+//			}, function(response) {
+//				console.log(response)
+//			})
+//		}
 	}
+	
 </script>
 
 <style  lang="less">

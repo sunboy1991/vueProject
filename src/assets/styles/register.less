@@ -1,0 +1,444 @@
+@import 'common';
+input, textarea {
+  -webkit-user-select: auto!important;
+  -khtml-user-select: auto!important;
+  -moz-user-select: auto!important;
+  -ms-user-select: auto!important;
+  -o-user-select: auto!important;
+  user-select: auto!important;
+}
+html,body{
+  background: #fff;
+}
+.input-main {
+  margin: 41/@public_size auto;
+  position: relative;
+  height: 50px;
+  .font-size(40);
+  .line-height(40);
+}
+.input-border {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  .display(flex);
+  .item:last-child {
+    margin-right: 0;
+  }
+  .item {
+    flex: 1;
+    text-align: center;
+    margin-right: 15/@public_size;
+
+    border-bottom: 2px solid #333;
+    position: relative;
+    &.active,&.change_class{
+      position: relative;
+      border-bottom: none;
+    }
+    &:disabled{
+      background: none;
+      color: #333;
+    }
+  }
+  .item_input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    .font-size(40);
+    padding-bottom: 20%;
+    border: none;
+    text-align: center;
+  }
+}
+.input-border-change{
+  .item{
+    width: 16.7%;
+  }
+}
+.input-border:focus,.item:focus{
+  outline: none;
+}
+.register_div{
+  .main_box{
+    .width(295);
+    margin: 0 auto;
+    padding-top: 125/@public_size;
+    position: relative;
+  }
+  .error_msg{
+    display: none;
+    position: absolute;
+    top: 81/@public_size;
+    font-size:13px;
+    width: 100%;
+    text-align: center;
+    color: #FE403B;
+  }
+  .register_box{
+    display: none;
+  }
+  .import_input{
+    width:100%;
+    padding:15/@public_size 0;
+    .line-height(24);
+    .font-size(18);
+    border:none;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    &::-webkit-input-placeholder{
+      .font-size(18);
+      color: #ccc;
+    }
+  }
+  .agreement{
+    padding: 20/@public_size 0 60/@public_size;
+    text-align: center;
+    font-size: 12px;
+    color: #8F8E94;
+    a{
+      color: #8F8E94;
+      em{
+        color: #FE403B;
+        text-decoration: underline;
+      }
+    }
+  }
+  .phone_box{
+    display: block;
+    .btn_phone{
+      margin-top: 0;
+    }
+  }
+  .graph_box{
+    .input-main{
+      .width(150);
+    }
+    .import_input{
+      //padding:41/@public_size 0;
+      .line-height(30);
+      .font-size(24);
+      border-bottom: none;
+    }
+    .img_box{
+      .width(170);
+      .height(50);
+      margin: 0 auto;
+      img{
+        width: 100%;
+        height:100%;
+      }
+    }
+    .refresh_box{
+      padding-top: 15/@public_size;
+      text-align: center;
+      font-size: 12px;
+      a{
+        color: #8F8E94;
+        em{
+          color: #FE403B;
+        }
+      }
+    }
+  }
+  .note_box{
+    .note_p{
+      position: absolute;
+      top: 88/@public_size;
+      .font-size(13);
+      width: 100%;
+      text-align: center;
+      color: #333;
+    }
+    .input-main{
+      .width(235);
+    }
+    .input-border .item{
+      margin-right: .3rem;
+    }
+    .retry_box{
+      text-align: center;
+      color: #8F8E94;
+      font-size: 12px;
+      a{
+        display: none;
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
+  .paw_box{
+    .main_box{
+      padding-top: 91/@public_size;
+    }
+    .btn_look{
+      top: 196/@public_size;
+    }
+    .name_i,.paw_i{
+      display: none;
+      position: absolute;
+      top: 110/@public_size;
+      right: 34/@public_size;
+      .width(13);
+      .height(13);
+      background: url("../img/icon_gx.png") center no-repeat;
+      background-size: contain;
+    }
+    .paw_i{
+      top: 206/@public_size;
+    }
+    .paw_input{
+      padding-top: 54/@public_size;
+    }
+    .btn_submit{
+      margin-top: 0;
+    }
+  }
+}
+//commom
+.btn_look{
+  position: absolute;
+  right: 0;
+  .width(19);
+  .height(8);
+  border: 10/@public_size solid transparent;
+  background: url("../img/icon_paw_show.png") center no-repeat;
+  background-size: contain;
+  &.look_hide{
+    background: url("../img/icon_paw_hide.png") center no-repeat;
+    background-size: contain;
+  }
+}
+
+.btn_next{
+  display: block;
+  .width(303);
+  .height(53);
+  text-align: center;
+  .line-height(49);
+  color: #ccc;
+  background: url("../img/icon_next_disabled.png") center no-repeat;
+  background-size: 103%;
+}
+.btn_next_ok{
+  color: #fff;
+  background: url("../img/icon_next.png") center no-repeat;
+  background-size:contain;
+}
+.resetpsw_tips{
+    width: 80%;text-align: center;
+    margin: 0 auto;
+    color: #999;
+    .font-size(12);
+    margin-top: 20/@public_size;
+    margin-bottom: 20/@public_size;
+}
+//login
+input{
+  outline: none;
+}
+.logo{
+  margin-top: 36.5/@public_size;
+  margin-bottom:28/@public_size;
+  text-align: center;
+  span{
+      color:#FE403B;
+  }
+  img{
+    width: 54.66%;
+  }
+}
+.btn_delete{
+  display: none;
+  .width(13);
+  .height(13);
+  background: url("../img/icon_delete.png") center/contain no-repeat;
+}
+.login_container{
+  margin: 0 auto;
+  width: 78.93%;
+  div{
+    position:relative ;
+    margin-top:25/@public_size;
+  }
+  input{
+    padding:12.5/@public_size 4/@public_size;
+    width: 100%;
+    border: none;
+    color: #333333;
+    .font-size(14);
+    border-bottom: 1px solid #e6e6e6;
+    &::-webkit-input-placeholder{
+      color: #cccccc;
+      font-size: inherit;
+    }
+    .username:focus>.btn_delete{
+      display: inline-block;
+    }
+  }
+  .errorMsg{color: #f00;}
+  .btn_next{
+    letter-spacing: 8.5/@public_size;
+  }
+  .btn_next1{
+    letter-spacing: 2/@public_size;
+  }
+  .btn_look{
+    top:21/@public_size
+  }
+  .btn_submit{
+    margin-top: 27/@public_size;
+  }
+  .btn_register{
+    margin-top: 15/@public_size;
+    color: #fe403b;
+  }
+  .show_password{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0;
+    padding:28/@public_size .5rem;
+    color: #cccccc;
+    .font-size(13);
+  }
+  .btn{
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:90%;
+    margin: auto;
+  }
+  button{
+    border: none;
+  }
+}
+
+.forget_password{
+  margin-top: 12.5/@public_size;
+  margin-bottom: 20.5/@public_size;
+  text-align: right;
+  .height(13);
+  a {
+    .font-size(12);
+    color: #999;
+  }
+  .login_error{
+    display: none;
+    float: left;
+    .font-size(13);
+    color: #fe443b;
+  }
+}
+.active{
+  display: block !important;
+}
+.weixin{
+    margin-bottom: 20/@public_size;    
+    p{
+        color: #999;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 12px;
+        position: relative;
+        border-top: 1px solid #EDEDED;
+        span{
+            position: absolute;
+            top: -5px;
+            padding:0 5/@public_size;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .btn_weixin{
+        color: #fff;
+        margin-top: 20/@public_size;
+        background: url('../img/icon_weixin.jpg') center no-repeat;
+        background-size: contain;
+    }
+}
+.yzmtext{
+    width: 100%;
+    .clearfix();
+    border-bottom:1px solid #e6e6e6;
+    input{
+        .width(150);    
+        border: none;
+        float: left;
+    }
+    img{
+        float: right;
+        .width(60);
+        .height(30);
+        border: 1px solid #e6e6e6;
+        margin-right: 8/@public_size;
+    }
+    div{
+        float: right;
+        margin: 0;
+        .font-size(12);
+        color: #999;
+        .change{
+            color: #FE403B;
+        }
+    }
+    
+    
+}
+.find_yzm{
+    border-bottom: 1px solid #e6e6e6;
+    input{
+        width: 150/@public_size;
+        border: none;
+    }
+    div,img{
+        float: right;
+        margin: 0;
+        font-size: 12/@public_size;
+        color: #999;
+        p.change_code{
+            color:#FE403B;
+        }
+    }
+    img{
+        width:60/@public_size;
+        height: 30/@public_size;
+        border: 1px solid #ccc;
+        margin-right: 8/@public_size;
+    }
+}
+.import_yzm{
+    border-bottom: 1px solid #e6e6e6;
+    input{
+        width: 150/@public_size;
+        border: none;
+    }
+    button{
+        float: right;
+        width: 90/@public_size;
+        height: 30/@public_size;
+        background: #FFBD00;
+        color: #fff;
+        font-size: 12/@public_size;
+    }
+    button.getyzm_h{
+        background: #ccc;
+        color: #fff;
+    }
+}
+.go_register{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10/@public_size;
+    color: #FE403B;
+    font-size: 14/@public_size;
+}

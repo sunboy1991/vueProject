@@ -9,6 +9,7 @@ Vue.prototype.HOST = ''
 Vue.prototype.$common = common
 /* eslint-disable no-new */
 console.log(common)
+common.setBaseRem()
 new Vue({
   el: '#app',
   router,
