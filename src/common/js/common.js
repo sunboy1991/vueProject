@@ -4,18 +4,19 @@
 
 	var host= require('./host.js')
 	var fkybridge= require('./fkybridge.js')
+	var tool= require('./tool.js')
+	console.log()
     var h = {
         appID: host.socketApi,
         imgUrl: host.img,
         host: host.api,
         userInfo: '', // 用户信息
         publicData: {
-            token: '',
+            token: tool.getLocalStorage('token'),
             versionNum: 3700,
-           
             os: 'h5',
-            station: '',
-            stationName: '',
+            station: tool.getLocalStorage('city_id'),
+            stationName: tool.getLocalStorage('stationName'),
             version: 'v1.2'
         },
         gotop: function () {

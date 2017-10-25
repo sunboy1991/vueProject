@@ -31,7 +31,14 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: { 	
+    proxyTable: { 
+    	       '/jiekou': {
+            target: 'http://m.yaoex.com',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/jiekou': ''
+            }
+            }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

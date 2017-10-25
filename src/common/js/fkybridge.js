@@ -1,5 +1,7 @@
-define([], function() {
-    var bridge = {
+    var bridge ={
+    	
+    }
+    var bridgeNo = {
         nativeUrl:{
             //登录
             login:"fky://account/login",
@@ -9,8 +11,11 @@ define([], function() {
             shopHome:"fky://shop/shopItem",
             // 全局搜索 参数：type,categoryId,keyword
             globalSearch:"fky://search/searchResult"
-        }
-    };
+        },
+       bridge:bridge
+       
+    }
+
     function deviceInfo() {
         var agent = navigator.userAgent
         if(agent.indexOf("FKYIOS") != -1) {
@@ -111,7 +116,7 @@ define([], function() {
     bridge.back = function () {
         callNative('pop')
     };
-    return bridge;
-});
+    export default bridgeNo;
+
 
 

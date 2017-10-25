@@ -7,9 +7,12 @@ Vue.use(VueResource)
 Vue.config.productionTip = false
 Vue.prototype.HOST = ''
 Vue.prototype.$common = common
+import axios from 'axios'
+Vue.prototype.$axios = axios;
 /* eslint-disable no-new */
-console.log(common)
+console.log(common.publicData.versionNum)
 common.setBaseRem()
+
 new Vue({
   el: '#app',
   router,
