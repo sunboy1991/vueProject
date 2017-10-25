@@ -31,6 +31,7 @@
 <script>
 	var fkybridge = require('../common/js/fkybridge.js');
 	var tool= require('../common/js/tool.js')
+	var axios= require('../common/js/axios01.js').default
 	export default {
 		name: 'header',
 		data() {
@@ -46,28 +47,12 @@
 				this.$common.setBaseRem()
 			},
 			getData: function() {
-				console.log(this.$common.publicData)
-				this.$axios.post('/jiekou/passport/api/user/userLogin', {
+				console.log(axios)
+				var data =axios('passport/api/user/userLogin',{
 					"username": 'testzd',
 					"password": 'q123456'
-				}, {
-					headers: this.$common.publicData
-				}).then((reponse) => {
-					var data = reponse.data.data
-					console.log(reponse.data)
-					if(reponse.data==0){
-					this.$common.setLocalStorage('stationName', encodeURIComponent(data.stationName))
-					this.$common.setLocalStorage('city_id', data.station)
-					this.$common.setLocalStorage('token', data.token)
-					this.$common.setLocalStorage('result', data.result)
-					this.$common.setLocalStorage('username', data.userName)
-					this.$common.setLocalStorage('avatarUrl', data.avatarUrl)
-					this.$common.setLocalStorage('enterpriseName', data.enterpriseName)
-					this.$common.setLocalStorage('nameList', data.nameList)
-					this.$common.setLocalStorage('userId', data.userId)						
-					}
-
 				})
+				console.log(data)
 			}
 		}
 
