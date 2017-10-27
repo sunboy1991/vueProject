@@ -1,8 +1,17 @@
 import axios from 'axios'
 var host = require('./host.js')
 import common from '@/common/js/common.js'
+import {
+	Toast,
+	Loadmore,
+	TabContainer,
+	TabContainerItem,
+	Indicator,
+	MessageBox
+} from "mint-ui";
+
 function axiosHttp(url, data, obj) {
-var promiseHttp = new Promise(function(resolve, reject) {
+	var promiseHttp = new Promise(function(resolve, reject) {
 		var _defaults = {
 				gettype: false,
 				contentType: "application/json; charset=utf-8",
@@ -24,6 +33,11 @@ var promiseHttp = new Promise(function(resolve, reject) {
 		}).then((response) => {
 			response = response.data;
 			console.log(response)
+			Toast({
+				message: "请求成功",
+				position: 'center',
+				duration: 1000
+			});
 			if(response.statusCode == -2) {
 				if(!isCheckLogin) {
 					window.localStorage.removeItem('access_token');
@@ -37,11 +51,9 @@ var promiseHttp = new Promise(function(resolve, reject) {
 				resolve(response)
 			}
 		}).catch((err) => {
-				reject(err)
-			}
-		)
-	}
-	)	
+			reject(err)
+		})
+	})
 	return promiseHttp;
 }
 export default axiosHttp;

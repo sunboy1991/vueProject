@@ -61,11 +61,7 @@
 					"password": 'q123456'
 				}).then((data) => {
 					console.log(data)
-							Toast({
-								message: "请求成功",
-								position: 'center',
-								duration: 1000
-							});					
+				
 				})
 				
 			}
