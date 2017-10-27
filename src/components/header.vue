@@ -29,6 +29,14 @@
 </template>
 
 <script>
+	import {
+		Toast,
+		Loadmore,
+		TabContainer,
+		TabContainerItem,
+		Indicator,
+		MessageBox
+	} from "mint-ui";	
 	var fkybridge = require('../common/js/fkybridge.js');
 	var tool= require('../common/js/tool.js')
 	var axios= require('../common/js/axios01.js').default
@@ -48,11 +56,18 @@
 			},
 			getData: function() {
 				console.log(axios)
-				var data =axios('passport/api/user/userLogin',{
+				axios('passport/api/user/userLogin',{
 					"username": 'testzd',
 					"password": 'q123456'
+				}).then((data) => {
+					console.log(data)
+							Toast({
+								message: "请求成功",
+								position: 'center',
+								duration: 1000
+							});					
 				})
-				console.log(data)
+				
 			}
 		}
 
