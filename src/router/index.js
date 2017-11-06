@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import header from '@/components/header.vue'
-
+import newindex from '@/components/newindex.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -18,5 +18,17 @@ export default new Router({
 //
 //]
     },  
+     {
+      path: 'newindex',
+      name: 'newindex',
+      component: newindex,
+//    children: [
+//      {
+//        path: 'header',
+//        component: header
+//      }
+//
+//]
+    }   
   ]
 })

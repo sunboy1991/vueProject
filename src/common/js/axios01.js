@@ -51,6 +51,11 @@ function axiosHttp(url, data, obj) {
 				resolve(response)
 			}
 		}).catch((err) => {
+			Toast({
+				message:'请求超时',
+				position: 'center',
+				duration: 1000
+			});			
 			reject(err)
 		})
 	})
